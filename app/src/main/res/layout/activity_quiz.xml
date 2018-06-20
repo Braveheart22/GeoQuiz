@@ -5,16 +5,18 @@
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp"
+        android:gravity="center"
         android:text="@string/question_text" />
 
     <LinearLayout
+        style="?android:attr/buttonBarStyle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        style="?android:attr/buttonBarStyle">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/true_button"
