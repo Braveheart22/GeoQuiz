@@ -33,15 +33,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/false_button" />
-
     </LinearLayout>
 
-    <Button
-        android:id="@+id/next_button"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/next_button"
-        android:drawableEnd="@drawable/arrow_right"
-        android:drawablePadding="4dp"/>
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/prev_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prev_button"
+            android:drawableStart="@drawable/arrow_left"
+            android:drawablePadding="4dp"/>
+        <Button
+            android:id="@+id/next_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_button"
+            android:drawableEnd="@drawable/arrow_right"
+            android:drawablePadding="4dp"/>
+
+    </LinearLayout>
 
 </LinearLayout>
