@@ -17,6 +17,7 @@ public class QuizActivity extends AppCompatActivity {
     private static final String KEY_INDEX = "index";
     private static final String KEY_ANSWERED = "answered";
     private static final String KEY_CORRECT = "correct";
+    private static final String KEY_BUTTON_STATE = "button_state";
     private Button mTrueButton;
     private Button mFalseButton;
     private TextView mQuestionTextView;
@@ -44,6 +45,8 @@ public class QuizActivity extends AppCompatActivity {
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
             questionsAnswered = savedInstanceState.getInt(KEY_ANSWERED, 0);
             questionsCorrect = savedInstanceState.getInt(KEY_CORRECT, 0);
+            Log.i(TAG, "onCreate: BUTTON STATE - " + savedInstanceState.getBoolean(KEY_BUTTON_STATE, true));
+            setButtonState(savedInstanceState.getBoolean(KEY_BUTTON_STATE, true));
         }
 
         mQuestionTextView = findViewById(R.id.question_text_view);
@@ -122,6 +125,7 @@ public class QuizActivity extends AppCompatActivity {
         savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
         savedInstanceState.putInt(KEY_ANSWERED, questionsAnswered);
         savedInstanceState.putInt(KEY_CORRECT, questionsCorrect);
+        savedInstanceState.putBoolean(KEY_BUTTON_STATE, mFalseButton.isEnabled());
     }
 
     @Override
