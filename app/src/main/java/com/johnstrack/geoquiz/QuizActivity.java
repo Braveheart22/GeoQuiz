@@ -45,9 +45,7 @@ public class QuizActivity extends AppCompatActivity {
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
             questionsAnswered = savedInstanceState.getInt(KEY_ANSWERED, 0);
             questionsCorrect = savedInstanceState.getInt(KEY_CORRECT, 0);
-            Log.i(TAG, "onCreate: BUTTON STATE - " + savedInstanceState.getBoolean(KEY_BUTTON_STATE, true));
-            setButtonState(savedInstanceState.getBoolean(KEY_BUTTON_STATE, true));
-        }
+       }
 
         mQuestionTextView = findViewById(R.id.question_text_view);
         mQuestionTextView.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +71,10 @@ public class QuizActivity extends AppCompatActivity {
                 checkAnswer(false);
             }
         });
+
+        if (savedInstanceState !=   null) {
+            setButtonState(savedInstanceState.getBoolean(KEY_BUTTON_STATE, true));
+        }
 
         ImageButton nextButton = findViewById(R.id.next_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
